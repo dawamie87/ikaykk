@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Family Gathering IKA YKK 2026</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Outfit:wght@300;500;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'display': ['Fredoka', 'sans-serif'],
+                        'body': ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        'vibrant-teal': '#00bfa5',
+                        'vibrant-coral': '#ff6b6b',
+                        'vibrant-yellow': '#ffd93d',
+                        'vibrant-purple': '#6c5ce7',
+                        'soft-black': '#1e272e',
+                        'glass-white': 'rgba(255, 255, 255, 0.85)',
+                    },
+                    boxShadow: {
+                        'neon': '0 0 20px rgba(255, 255, 255, 0.5)',
+                        'card': '0 15px 35px rgba(0, 0, 0, 0.15)',
+                    },
+                    animation: {
+                        'float': 'float 8s ease-in-out infinite',
+                        'float-delayed': 'float 8s ease-in-out 4s infinite',
+                        'spin-slow': 'spin 12s linear infinite',
+                        'pulse-fast': 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'fade-in': 'fadeIn 0.5s ease-out forwards',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0) scale(1)' },
+                            '50%': { transform: 'translateY(-20px) scale(1.05)' },
+                        },
+                        fadeIn: {
+                            '0%': { opacity: '0', transform: 'translateY(10px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .pattern-bg {
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            transition: all 0.3s ease;
+        }
+        
+        .glass-card:hover {
+            background: rgba(255, 255, 255, 0.9);
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .glass-card-dark {
+            background: rgba(30, 39, 46, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .glass-card-dark:hover {
+            background: rgba(30, 39, 46, 0.95);
+            transform: translateY(-5px) rotate(0deg) !important;
+        }
+        
+        /* Timeline specific styles */
+        .timeline-line {
+            position: absolute;
+            left: 15px;
+            top: 20px;
+            bottom: 0;
+            width: 2px;
+            border-left: 2px dashed rgba(0,0,0,0.2);
+        }
+        .timeline-item:last-child .timeline-line {
+            display: none;
+        }
+
+        /* Custom Scrollbar for Comments */
+        .comment-scroll::-webkit-scrollbar {
+            width: 6px;
+        }
+        .comment-scroll::-webkit-scrollbar-track {
+            background: rgba(0,0,0,0.05);
+            border-radius: 10px;
+        }
+        .comment-scroll::-webkit-scrollbar-thumb {
+            background: rgba(0,0,0,0.2);
+            border-radius: 10px;
+        }
+        .comment-scroll::-webkit-scrollbar-thumb:hover {
+            background: rgba(0,0,0,0.4);
+        }
+    </style>
+</head>
+<body class="bg-slate-900 font-body text-soft-black overflow-x-hidden antialiased selection:bg-vibrant-yellow selection:text-black">
+
+    <!-- Main Container (Full Width Responsive) -->
+    <div class="relative w-full min-h-screen bg-gradient-to-br from-vibrant-teal via-vibrant-purple to-vibrant-coral overflow-hidden">
+        
+        <!-- Animated Background Shapes -->
+        <div class="fixed inset-0 pattern-bg opacity-30 pointer-events-none z-0"></div>
+        <div class="fixed -top-20 -left-20 w-96 h-96 bg-vibrant-yellow rounded-full mix-blend-multiply filter blur-3xl opacity-60 animate-float z-0"></div>
+        <div class="fixed top-1/2 -right-20 w-96 h-96 bg-vibrant-coral rounded-full mix-blend-multiply filter blur-3xl opacity-60 animate-float-delayed z-0"></div>
+        <div class="fixed bottom-0 left-1/3 w-80 h-80 bg-white rounded-full mix-blend-overlay filter blur-3xl opacity-30 animate-pulse z-0"></div>
+
+        <!-- Content Wrapper -->
+        <div class="relative z-10 container mx-auto px-4 md:px-8 py-8 md:py-16 flex flex-col gap-8 md:gap-12 max-w-6xl">
+
+            <!-- SECTION 1: HERO -->
+            <section class="flex flex-col items-center text-center md:py-10">
+                <div class="inline-block px-5 py-2 mb-6 rounded-full glass-card-dark text-vibrant-yellow text-xs md:text-sm font-bold tracking-widest uppercase border border-vibrant-yellow/30 shadow-lg animate-bounce">
+                    <i class="fas fa-star mr-2"></i> IKA YKK Official Event
+                </div>
+                
+                <h1 class="font-display font-bold text-6xl md:text-8xl leading-[0.9] text-white drop-shadow-lg mb-4">
+                    Family<br>
+                    <span class="text-vibrant-yellow text-5xl md:text-7xl">Gathering</span>
+                </h1>
+                <h2 class="font-display font-bold text-3xl md:text-5xl text-white mb-6">& Temu Kangen</h2>
+                
+                <p class="text-white/90 text-sm md:text-xl font-medium leading-relaxed max-w-2xl mx-auto mb-8 md:mb-10">
+                    Saatnya berkumpul, berbagi cerita, dan menciptakan kenangan indah bersama Ikatan Keluarga Alumni Yayasan Khazanah Kebajikan.
+                </p>
+
+                <div class="flex flex-wrap justify-center gap-4 mb-10">
+                    <div class="bg-white/20 backdrop-blur-md rounded-xl px-6 py-3 text-white font-bold text-sm md:text-lg border border-white/30 flex items-center hover:bg-white/30 transition">
+                        <i class="far fa-calendar-alt mr-3 text-vibrant-yellow"></i> 7–8 Feb 2026
+                    </div>
+                    <div class="bg-white/20 backdrop-blur-md rounded-xl px-6 py-3 text-white font-bold text-sm md:text-lg border border-white/30 flex items-center hover:bg-white/30 transition">
+                        <i class="fas fa-map-marker-alt mr-3 text-vibrant-coral"></i> Villa Gadog
+                    </div>
+                </div>
+
+                <!-- WA DAFTAR -->
+                <a href="https://wa.me/6285899979650?text=Assalamualaikum,%20saya%20ingin%20mendaftar%20Family%20Gathering%20IKA%20YKK%202026." target="_blank" class="group relative px-10 py-5 bg-white text-vibrant-purple font-black text-xl md:text-2xl rounded-full shadow-[0_10px_20px_rgba(0,0,0,0.2)] hover:shadow-neon hover:scale-105 transition-all duration-300 transform w-full max-w-sm">
+                    <span class="absolute inset-0 w-full h-full rounded-full border-4 border-white opacity-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-300"></span>
+                    DAFTAR SEKARANG <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                </a>
+            </section>
+
+            <!-- GRID SECTION: INFO & PAYMENT -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+                
+                <!-- SECTION 2: INFORMASI -->
+                <section class="glass-card rounded-3xl p-6 md:p-8 shadow-card transform md:hover:scale-[1.02]">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 rounded-full bg-vibrant-teal flex items-center justify-center text-white text-xl shadow-lg mr-4">
+                            <i class="fas fa-info"></i>
+                        </div>
+                        <h3 class="font-display text-2xl md:text-3xl font-bold text-soft-black">Informasi Acara</h3>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-start bg-white/50 p-4 rounded-2xl border border-white/60 hover:bg-white/80 transition">
+                            <div class="text-3xl mr-4">📅</div>
+                            <div>
+                                <p class="font-bold text-soft-black text-lg md:text-xl">7–8 Februari 2026</p>
+                                <p class="text-sm text-gray-600">Sabtu & Ahad (Menginap)</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start bg-white/50 p-4 rounded-2xl border border-white/60 hover:bg-white/80 transition">
+                            <div class="text-3xl mr-4">📍</div>
+                            <div>
+                                <p class="font-bold text-soft-black text-lg md:text-xl">Villa Gadog</p>
+                                <p class="text-sm text-gray-600">Jama’ah Ka Ustadz Bachtiar</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start bg-white/50 p-4 rounded-2xl border border-white/60 hover:bg-white/80 transition">
+                            <div class="text-3xl mr-4">🎉</div>
+                            <div>
+                                <p class="font-bold text-soft-black text-lg md:text-xl">Agenda</p>
+                                <p class="text-sm text-gray-600">Family Gathering & Temu Kangen Alumni IKA YKK</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SECTION 3: KETENTUAN (Payment) -->
+                <section class="glass-card-dark rounded-3xl p-6 md:p-8 shadow-card relative overflow-hidden text-white transform md:rotate-0 rotate-1 md:hover:scale-[1.02]">
+                    <div class="absolute top-0 right-0 w-40 h-40 bg-white/5 rounded-full -mr-10 -mt-10 blur-2xl"></div>
+
+                    <div class="flex items-center mb-6 relative z-10">
+                        <div class="w-12 h-12 rounded-full bg-vibrant-yellow flex items-center justify-center text-soft-black text-xl shadow-lg mr-4">
+                            <i class="fas fa-wallet"></i>
+                        </div>
+                        <h3 class="font-display text-2xl md:text-3xl font-bold">Ketentuan & Biaya</h3>
+                    </div>
+
+                    <div class="bg-white/10 rounded-2xl p-5 mb-5 border border-white/10 backdrop-blur-sm">
+                        <p class="text-gray-300 text-xs uppercase tracking-wider mb-1">Biaya Kontribusi</p>
+                        <p class="text-4xl font-display font-bold text-vibrant-yellow mb-1">Rp 200.000</p>
+                        <p class="text-sm text-gray-300">/ per Keluarga</p>
+                    </div>
+
+                    <div class="space-y-4 relative z-10">
+                        <div class="bg-gradient-to-r from-blue-600 to-blue-800 p-5 rounded-xl shadow-lg border-t border-white/20">
+                            <div class="flex justify-between items-center mb-4">
+                                <span class="font-bold italic text-xl md:text-2xl">MANDIRI</span>
+                                <i class="fas fa-chip text-yellow-400 text-3xl"></i>
+                            </div>
+                            <div class="flex items-center justify-between mb-2">
+                                <code class="font-mono text-xl md:text-2xl tracking-wider" id="bank-acc">1010006006801</code>
+                                <button onclick="copyToClipboard('1010006006801')" class="bg-white/20 hover:bg-white/30 p-2 rounded-lg transition-colors text-sm">
+                                    <i class="far fa-copy"></i>
+                                </button>
+                            </div>
+                            <p class="text-sm opacity-80 uppercase tracking-widest">a.n. Desi Oktavia</p>
+                        </div>
+
+                        <div class="flex items-center justify-between text-sm bg-vibrant-coral/20 p-4 rounded-xl border border-vibrant-coral/30">
+                            <span><i class="fas fa-clock mr-2 text-vibrant-coral"></i> Batas Transfer</span>
+                            <span class="font-bold text-vibrant-coral text-lg">02 Feb 2026</span>
+                        </div>
+
+                        <!-- WA KONFIRMASI -->
+                        <a href="https://wa.me/6281283959806?text=Assalamualaikum,%20saya%20sudah%20transfer%20untuk%20Family%20Gathering%20IKA%20YKK." target="_blank" class="w-full py-4 rounded-xl bg-green-500 hover:bg-green-600 text-white font-bold text-base shadow-lg flex items-center justify-center gap-2 transition-transform active:scale-95">
+                            <i class="fab fa-whatsapp text-xl"></i> Konfirmasi Transfer
+                        </a>
+                    </div>
+                </section>
+            </div>
+
+            <!-- SECTION: GOOGLE MAPS LOCATION -->
+            <section class="glass-card rounded-3xl p-6 md:p-8 shadow-card group">
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 gap-4">
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 rounded-full bg-vibrant-coral flex items-center justify-center text-white text-xl shadow-lg mr-4">
+                            <i class="fas fa-map-marked-alt"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-display text-2xl md:text-3xl font-bold text-soft-black">Lokasi Acara</h3>
+                            <p class="text-sm text-gray-500 font-medium">Villa Gadog</p>
+                        </div>
+                    </div>
+                    <a href="https://maps.app.goo.gl/CHF8v1TcqjwZ7ZLu6" target="_blank" class="w-full md:w-auto px-6 py-3 bg-white border-2 border-vibrant-coral text-vibrant-coral font-bold rounded-xl hover:bg-vibrant-coral hover:text-white transition-colors flex items-center justify-center gap-2 shadow-sm">
+                        <i class="fas fa-location-arrow"></i> Buka di Google Maps
+                    </a>
+                </div>
+                
+                <div class="w-full h-64 md:h-96 rounded-2xl overflow-hidden shadow-inner border border-white/50 relative bg-gray-100">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.670566373728!2d106.86470877499317!3d-6.667018993327599!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69c9066601265d%3A0x6291166418290234!2sVilla%20Gadog!5e0!3m2!1sid!2sid!4v1708680000000!5m2!1sid!2sid" 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade"
+                        class="absolute inset-0 w-full h-full grayscale hover:grayscale-0 transition-all duration-500">
+                    </iframe>
+                </div>
+                <p class="mt-4 text-sm text-center text-gray-500 italic"><i class="fas fa-info-circle mr-1"></i> Klik tombol "Buka di Google Maps" untuk navigasi GPS yang lebih akurat.</p>
+            </section>
+
+            <!-- GRID SECTION: TRANSPORT & PACKING -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+                <!-- Transport -->
+                <section class="glass-card rounded-3xl p-6 md:p-8 shadow-card flex flex-col justify-center">
+                    <h3 class="font-display text-xl md:text-2xl font-bold text-soft-black mb-6 flex items-center">
+                        <i class="fas fa-car-side text-vibrant-purple mr-3 text-2xl"></i> Transportasi
+                    </h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-center bg-white/40 p-3 rounded-xl">
+                            <i class="fas fa-check-circle text-green-500 text-xl mr-3"></i>
+                            <span class="text-base md:text-lg font-medium">Kendaraan Pribadi</span>
+                        </li>
+                        <li class="flex items-start bg-vibrant-purple/10 p-4 rounded-xl border border-vibrant-purple/20">
+                            <i class="fas fa-hand-holding-usd text-vibrant-purple text-xl mt-1 mr-3"></i>
+                            <span class="text-base font-medium text-soft-black">Subsidi <span class="text-vibrant-purple font-black">Rp 100.000</span> untuk alumni yang membawa keluarga lain.</span>
+                        </li>
+                    </ul>
+                </section>
+
+                <!-- Packing List -->
+                <section class="glass-card rounded-3xl p-6 md:p-8 shadow-card bg-gradient-to-br from-white to-orange-50">
+                    <h3 class="font-display text-xl md:text-2xl font-bold text-soft-black mb-6 flex items-center">
+                        <i class="fas fa-suitcase-rolling text-vibrant-coral mr-3 text-2xl"></i> Yang Harus Dibawa
+                    </h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100 text-center hover:shadow-md transition">
+                            <div class="text-3xl mb-2">🥘</div>
+                            <p class="text-sm font-bold text-gray-700 leading-tight">Makanan Matang</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100 text-center relative overflow-hidden hover:shadow-md transition">
+                            <div class="absolute top-0 right-0 bg-red-500 text-white text-[10px] px-2 py-0.5 rounded-bl-lg font-bold">WAJIB</div>
+                            <div class="text-3xl mb-2">🎁</div>
+                            <p class="text-sm font-bold text-gray-700 leading-tight">Kado ±30rb</p>
+                            <p class="text-xs text-gray-500">(Kertas Coklat)</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100 text-center hover:shadow-md transition">
+                            <div class="text-3xl mb-2">🍚</div>
+                            <p class="text-sm font-bold text-gray-700 leading-tight">Beras 4 Gelas</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100 text-center hover:shadow-md transition">
+                            <div class="text-3xl mb-2">🍜</div>
+                            <p class="text-sm font-bold text-gray-700 leading-tight">Indomie 4 Bks</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100 text-center col-span-2 hover:shadow-md transition">
+                            <div class="text-3xl mb-2">🧴</div>
+                            <p class="text-sm font-bold text-gray-700 leading-tight">Perlengkapan Pribadi</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- SECTION 5: TITIK KUMPUL -->
+            <section class="glass-card-dark text-white rounded-3xl p-8 md:p-10 shadow-card text-center relative overflow-hidden group">
+                 <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 pointer-events-none"></div>
+                
+                <h3 class="font-display text-xl md:text-2xl font-bold text-vibrant-yellow mb-2 uppercase tracking-widest">Titik Kumpul</h3>
+                <h2 class="font-display text-6xl md:text-8xl font-black mb-4 tracking-tighter">YKK</h2>
+                <div class="w-full max-w-md mx-auto h-1 bg-gradient-to-r from-transparent via-white/50 to-transparent mb-6"></div>
+                
+                <div class="flex flex-col md:flex-row justify-center items-center gap-4 mb-6">
+                    <div class="bg-white/10 px-6 py-3 rounded-xl backdrop-blur-sm w-full md:w-auto">
+                        <span class="block text-xs text-gray-400 uppercase tracking-wider">Jam Kumpul</span>
+                        <span class="font-bold text-2xl">09.00 WIB</span>
+                    </div>
+                    <div class="bg-white/10 px-6 py-3 rounded-xl backdrop-blur-sm w-full md:w-auto">
+                        <span class="block text-xs text-gray-400 uppercase tracking-wider">Status</span>
+                        <span class="font-bold text-2xl text-green-400">On Time</span>
+                    </div>
+                </div>
+                <div class="inline-flex items-center text-base font-medium bg-vibrant-teal/20 text-vibrant-teal px-6 py-3 rounded-full border border-vibrant-teal/50 hover:bg-vibrant-teal/30 transition">
+                    <i class="fas fa-motorcycle mr-3"></i> Konvoi Bersama Menuju Lokasi
+                </div>
+            </section>
+
+            <!-- SECTION 6: DETAILED RUNDOWN (Split Columns) -->
+            <section class="glass-card rounded-3xl p-6 md:p-10 shadow-card">
+                <div class="flex flex-col md:flex-row items-center justify-between mb-8 md:mb-12">
+                    <h3 class="font-display text-3xl font-bold text-soft-black flex items-center mb-4 md:mb-0">
+                        <i class="fas fa-clipboard-list text-vibrant-purple mr-4"></i> Rundown Acara
+                    </h3>
+                    <span class="text-sm font-bold bg-vibrant-purple text-white px-4 py-2 rounded-full uppercase tracking-wider shadow-lg">Lengkap</span>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16">
+                    
+                    <!-- HARI 1: SABTU -->
+                    <div class="relative">
+                        <div class="flex items-center mb-8 bg-white/50 p-4 rounded-2xl border border-white">
+                            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-vibrant-teal to-teal-600 text-white flex items-center justify-center text-2xl font-bold shadow-lg mr-5 rotate-3">7</div>
+                            <div>
+                                <h4 class="font-bold text-2xl text-soft-black">Sabtu</h4>
+                                <p class="text-vibrant-teal text-base font-bold">7 Februari 2026</p>
+                            </div>
+                        </div>
+                        
+                        <div class="space-y-0 relative pl-4 md:pl-6">
+                            <div class="absolute left-[19px] md:left-[27px] top-2 bottom-4 w-[2px] bg-gradient-to-b from-teal-200 to-transparent"></div>
+
+                            <!-- 09.00 - 12.00 -->
+                            <div class="relative pl-10 md:pl-12 pb-10 group">
+                                <div class="absolute left-3 md:left-5 top-1.5 w-4 h-4 bg-vibrant-teal rounded-full ring-4 ring-white shadow-sm z-10 group-hover:scale-125 transition-transform"></div>
+                                <span class="inline-block bg-teal-100 text-teal-800 text-xs font-bold px-2 py-1 rounded-md mb-2">09.00 – 12.00</span>
+                                <p class="font-bold text-gray-800 text-lg">Perjalanan Menuju Villa</p>
+                                <p class="text-sm text-gray-600 mt-1">Konvoi santai dari titik kumpul YKK.</p>
+                            </div>
+
+                            <!-- 12.00 Check-in -->
+                            <div class="relative pl-10 md:pl-12 pb-10 group">
+                                <div class="absolute left-3 md:left-5 top-1.5 w-4 h-4 bg-gray-300 rounded-full ring-4 ring-white shadow-sm z-10 group-hover:scale-125 transition-transform"></div>
+                                <span class="inline-block bg-gray-200 text-gray-700 text-xs font-bold px-2 py-1 rounded-md mb-2">12.00</span>
+                                <p class="font-bold text-gray-800 text-lg">Check-in Villa</p>
+                                <p class="text-sm text-gray-500 mt-1 italic">(Kondisional sesuai situasi)</p>
+                            </div>
+
+                            <!-- 12.00 - 15.10 -->
+                            <div class="relative pl-10 md:pl-12 pb-10 group">
+                                <div class="absolute left-3 md:left-5 top-1.5 w-4 h-4 bg-vibrant-yellow rounded-full ring-4 ring-white shadow-sm z-10 group-hover:scale-125 transition-transform"></div>
+                                <span class="inline-block bg-yellow-100 text-yellow-800 text-xs font-bold px-2 py-1 rounded-md mb-2">12.00 – 15.10</span>
+                                <p class="font-bold text-gray-800 text-lg">Acara Bebas</p>
+                                <p class="text-sm text-gray-600 mt-1">Istirahat, sholat, makan siang mandiri.</p>
+                            </div>
+
+                            <!-- 15.10 - 17.00 -->
+                            <div class="relative pl-10 md:pl-12 pb-10 group">
+                                <div class="absolute left-3 md:left-5 top-1.5 w-4 h-4 bg-vibrant-coral rounded-full ring-4 ring-white shadow-sm z-10 group-hover:scale-125 transition-transform"></div>
+                                <span class="inline-block bg-red-100 text-red-800 text-xs font-bold px-2 py-1 rounded-md mb-2">15.10 – 17.00</span>
+                                <p class="font-bold text-gray-800 text-lg">Shalat Ashar & Games Anak</p>
+                                <p class="text-sm text-gray-600 mt-1">Keseruan untuk buah hati.</p>
+                            </div>
+
+                            <!-- 17.00 - 19.30 -->
+                            <div class="relative pl-10 md:pl-12 pb-10 group">
+                                <div class="absolute left-3 md:left-5 top-1.5 w-4 h-4 bg-vibrant-purple rounded-full ring-4 ring-white shadow-sm z-10 group-hover:scale-125 transition-transform"></div>
+                                <span class="inline-block bg-purple-100 text-purple-800 text-xs font-bold px-2 py-1 rounded-md mb-2">17.00 – 19.30</span>
+                                <p class="font-bold text-gray-800 text-lg">ISHOMA Maghrib & Isya</p>
+                                <p class="text-sm text-gray-600 mt-1">Makan malam bersama keluarga besar.</p>
+                            </div>
+
+                            <!-- 19.30 - 22.00 -->
+                            <div class="relative pl-10 md:pl-12 pb-10 group">
+                                <div class="absolute left-3 md:left-5 top-1.5 w-4 h-4 bg-indigo-500 rounded-full ring-4 ring-white shadow-sm z-10 group-hover:scale-125 transition-transform"></div>
+                                <span class="inline-block bg-indigo-100 text-indigo-800 text-xs font-bold px-2 py-1 rounded-md mb-2">19.30 – 22.00</span>
+                                <p class="font-bold text-gray-800 text-lg">Perkenalan & Tukar Kado</p>
+                                <p class="text-sm text-gray-600 mt-1">Sesi refresh memory & bonding alumni.</p>
+                            </div>
+
+                            <!-- 22.00 -->
+                            <div class="relative pl-10 md:pl-12">
+                                <div class="absolute left-3 md:left-5 top-1.5 w-4 h-4 bg-slate-800 rounded-full ring-4 ring-white shadow-sm z-10"></div>
+                                <span class="inline-block bg-slate-200 text-slate-800 text-xs font-bold px-2 py-1 rounded-md mb-2">22.00 – 03.00</span>
+                                <p class="font-bold text-gray-800 text-lg">Istirahat</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- HARI 2: AHAD -->
+                    <div class="relative">
+                        <div class="flex items-center mb-8 bg-white/50 p-4 rounded-2xl border border-white">
+                            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-vibrant-purple to-indigo-600 text-white flex items-center justify-center text-2xl font-bold shadow-lg mr-5 -rotate-3">8</div>
+                            <div>
+                                <h4 class="font-bold text-2xl text-soft-black">Ahad</h4>
+                                <p class="text-vibrant-purple text-base font-bold">8 Februari 2026</p>
+                            </div>
+                        </div>
+                        
+                        <div class="space-y-0 relative pl-4 md:pl-6">
+                            <div class="absolute left-[19px] md:left-[27px] top-2 bottom-4 w-[2px] bg-gradient-to-b from-purple-200 to-transparent"></div>
+
+                            <!-- 03.00 - 05.00 -->
+                            <div class="relative pl-10 md:pl-12 pb-10 group">
+                                <div class="absolute left-3 md:left-5 top-1.5 w-4 h-4 bg-indigo-500 rounded-full ring-4 ring-white shadow-sm z-10 group-hover:scale-125 transition-transform"></div>
+                                <span class="inline-block bg-indigo-100 text-indigo-800 text-xs font-bold px-2 py-1 rounded-md mb-2">03.00 – 05.00</span>
+                                <p class="font-bold text-gray-800 text-lg">Qiyamul Lail & Subuh</p>
+                                <p class="text-sm text-gray-600 mt-1">Tahajjud, Subuh berjama'ah + Tausiyah.</p>
+                            </div>
+
+                            <!-- 05.00 - 06.30 -->
+                            <div class="relative pl-10 md:pl-12 pb-10 group">
+                                <div class="absolute left-3 md:left-5 top-1.5 w-4 h-4 bg-orange-400 rounded-full ring-4 ring-white shadow-sm z-10 group-hover:scale-125 transition-transform"></div>
+                                <span class="inline-block bg-orange-100 text-orange-800 text-xs font-bold px-2 py-1 rounded-md mb-2">05.00 – 06.30</span>
+                                <p class="font-bold text-gray-800 text-lg">Sarapan Pagi</p>
+                                <p class="text-sm text-gray-600 mt-1">Menikmati udara segar Villa Gadog.</p>
+                            </div>
+
+                            <!-- 06.30 - 10.00 -->
+                            <div class="relative pl-10 md:pl-12 pb-10 group">
+                                <div class="absolute left-3 md:left-5 top-1.5 w-4 h-4 bg-vibrant-teal rounded-full ring-4 ring-white shadow-sm z-10 group-hover:scale-125 transition-transform"></div>
+                                <span class="inline-block bg-teal-100 text-teal-800 text-xs font-bold px-2 py-1 rounded-md mb-2">06.30 – 10.00</span>
+                                <p class="font-bold text-gray-800 text-lg">Olahraga & Games Ortu</p>
+                                <p class="text-sm text-gray-600 mt-1">Sehat & seru-seruan bersama.</p>
+                            </div>
+
+                            <!-- 10.00 - 12.00 -->
+                            <div class="relative pl-10 md:pl-12 pb-10 group">
+                                <div class="absolute left-3 md:left-5 top-1.5 w-4 h-4 bg-gray-400 rounded-full ring-4 ring-white shadow-sm z-10 group-hover:scale-125 transition-transform"></div>
+                                <span class="inline-block bg-gray-200 text-gray-800 text-xs font-bold px-2 py-1 rounded-md mb-2">10.00 – 12.00</span>
+                                <p class="font-bold text-gray-800 text-lg">Persiapan Pulang</p>
+                                <p class="text-sm text-gray-600 mt-1">Beres-beres dan packing.</p>
+                            </div>
+                            
+                            <!-- 12.00 - 12.30 -->
+                            <div class="relative pl-10 md:pl-12 pb-10 group">
+                                <div class="absolute left-3 md:left-5 top-1.5 w-4 h-4 bg-vibrant-purple rounded-full ring-4 ring-white shadow-sm z-10 group-hover:scale-125 transition-transform"></div>
+                                <span class="inline-block bg-purple-100 text-purple-800 text-xs font-bold px-2 py-1 rounded-md mb-2">12.00 – 12.30</span>
+                                <p class="font-bold text-gray-800 text-lg">Shalat Dzuhur</p>
+                            </div>
+
+                             <!-- 12.30 -->
+                             <div class="relative pl-10 md:pl-12 group">
+                                <div class="absolute left-3 md:left-5 top-1.5 w-4 h-4 bg-red-500 rounded-full ring-4 ring-white shadow-sm z-10 group-hover:scale-125 transition-transform"></div>
+                                <span class="inline-block bg-red-100 text-red-800 text-xs font-bold px-2 py-1 rounded-md mb-2">12.30 – 15.00</span>
+                                <p class="font-bold text-gray-800 text-lg">Perjalanan Pulang</p>
+                                <p class="text-sm text-gray-600 mt-1">Hati-hati di jalan, sampai jumpa lagi!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Note Disclaimer -->
+                <div class="mt-12 bg-yellow-50 border border-yellow-200 rounded-2xl p-6 flex items-start shadow-sm">
+                    <i class="fas fa-exclamation-circle text-yellow-600 mt-1 mr-4 text-xl"></i>
+                    <div>
+                        <p class="font-bold text-yellow-800 text-lg mb-1">Catatan Penting:</p>
+                        <p class="text-sm text-yellow-700 leading-relaxed">Jika terdapat perubahan teknis selama perjalanan atau menjelang acara, panitia akan menginformasikan melalui Group IKA YKK.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- SECTION 8: KOMENTAR & DOA (NEW) -->
+            <section class="glass-card rounded-3xl p-6 md:p-10 shadow-card">
+                <div class="text-center mb-10">
+                    <h3 class="font-display text-3xl font-bold text-soft-black mb-3">
+                        <i class="fas fa-heart text-vibrant-coral mr-2"></i> Ucapan & Doa Alumni
+                    </h3>
+                    <p class="text-gray-600">Sampaikan salam, doa, atau harapanmu untuk keluarga besar IKA YKK.</p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+                    <!-- Form Input -->
+                    <div class="bg-white/50 p-6 rounded-2xl border border-white">
+                        <form id="commentForm" class="space-y-4">
+                            <div>
+                                <label class="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Nama Lengkap</label>
+                                <input type="text" id="inputName" name="name" required placeholder="Contoh: Ahmad Dawami" class="w-full px-4 py-3 rounded-xl bg-white border border-gray-200 focus:border-vibrant-purple focus:ring-2 focus:ring-vibrant-purple/20 outline-none transition-all">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Alumni Angkatan</label>
+                                <input type="text" id="inputBatch" name="batch" required placeholder="Contoh: 2010" class="w-full px-4 py-3 rounded-xl bg-white border border-gray-200 focus:border-vibrant-purple focus:ring-2 focus:ring-vibrant-purple/20 outline-none transition-all">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Ucapan & Doa</label>
+                                <textarea id="inputMessage" name="message" required rows="4" placeholder="Semoga acara lancar dan berkah..." class="w-full px-4 py-3 rounded-xl bg-white border border-gray-200 focus:border-vibrant-purple focus:ring-2 focus:ring-vibrant-purple/20 outline-none transition-all"></textarea>
+                            </div>
+                            <!-- Status Indicator -->
+                            <div id="connectionStatus" class="text-xs text-center text-gray-500 hidden">
+                                <i class="fas fa-wifi text-green-500"></i> Mode Online (App Script)
+                            </div>
+                            <button type="submit" class="w-full bg-vibrant-purple text-white font-bold py-3 rounded-xl shadow-lg hover:bg-indigo-500 transition-all transform active:scale-95 flex justify-center items-center gap-2">
+                                <i class="fas fa-paper-plane"></i> Kirim Ucapan
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- List Komentar -->
+                    <div class="relative h-[450px] overflow-hidden rounded-2xl bg-white/40 border border-white/60">
+                         <div id="commentsList" class="h-full overflow-y-auto p-4 space-y-4 comment-scroll">
+                            <!-- Loading State -->
+                            <div class="flex flex-col items-center justify-center h-full text-gray-500">
+                                <i class="fas fa-spinner fa-spin text-2xl mb-2"></i>
+                                <p>Memuat doa-doa...</p>
+                            </div>
+                        </div>
+                        <!-- Fade Effect Bottom -->
+                        <div class="absolute bottom-0 left-0 right-0 h-10 bg-gradient-to-t from-white/80 to-transparent pointer-events-none"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 7: FINAL CTA -->
+            <section class="text-center mt-8 pb-8 md:pb-16" id="daftar">
+                <h2 class="font-display font-bold text-4xl md:text-5xl text-white mb-8 drop-shadow-md">
+                    Jangan Lewatkan<br>
+                    <span class="text-vibrant-yellow">Momen Kebersamaan Ini!</span>
+                </h2>
+                <!-- WA DAFTAR (6285899979650) -->
+                <a href="https://wa.me/6285899979650?text=Assalamualaikum,%20saya%20ingin%20mendaftar%20Family%20Gathering%20IKA%20YKK%202026." target="_blank" class="inline-block px-12 py-6 bg-white text-soft-black font-black text-xl md:text-2xl rounded-full shadow-[0_0_40px_rgba(255,255,255,0.4)] hover:shadow-neon hover:scale-105 transition-all duration-300 animate-pulse-fast">
+                    GABUNG SEKARANG 🚀
+                </a>
+            </section>
+
+            <!-- FOOTER -->
+            <footer class="text-center text-white/60 text-sm font-medium pt-8 border-t border-white/10">
+                <p class="mb-2">Created with ❤️ by Ahmad Dawami</p>
+                <p class="font-bold tracking-widest text-lg text-white/80">IKA YKK 2026</p>
+                
+                <!-- View Counter -->
+                <div class="mt-6 inline-flex items-center gap-2 bg-black/20 px-4 py-2 rounded-full backdrop-blur-sm border border-white/10">
+                    <i class="fas fa-eye text-vibrant-teal"></i>
+                    <span id="viewCounter">Loading...</span>
+                </div>
+                
+                <!-- Decoration decorative footer line -->
+                <div class="flex justify-center gap-2 mt-4">
+                    <div class="w-3 h-3 rounded-full bg-vibrant-teal animate-bounce" style="animation-delay: 0s"></div>
+                    <div class="w-3 h-3 rounded-full bg-vibrant-yellow animate-bounce" style="animation-delay: 0.1s"></div>
+                    <div class="w-3 h-3 rounded-full bg-vibrant-coral animate-bounce" style="animation-delay: 0.2s"></div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <!-- Interactive Scripts -->
+    <script>
+        // ==========================================
+        // KONFIGURASI GOOGLE APP SCRIPT
+        // ==========================================
+        const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwwFg1LE3nKdx34tmBR-p5oxoaUODtz3_hHzNm-CuwpWh3aPoZ40r0k8XvpQX2RySuRAw/exec';
+
+        // ==========================================
+        // LOGIC KOMENTAR (HYBRID: AppScript + LocalStorage)
+        // ==========================================
+        const LS_KEY = 'ikaykk_comments_v2';
+        
+        // --- 1. Definisi Helper Functions ---
+        function getLocalData() {
+            try {
+                return JSON.parse(localStorage.getItem(LS_KEY) || '[]');
+            } catch (e) { return []; }
+        }
+
+        function saveLocal(item) {
+            const data = getLocalData();
+            data.push(item);
+            localStorage.setItem(LS_KEY, JSON.stringify(data));
+        }
+
+        function renderComments(comments) {
+            const listContainer = document.getElementById('commentsList');
+            if (!listContainer) return;
+
+            // Sort: Terbaru di atas
+            comments.sort((a, b) => b.time - a.time);
+
+            if (comments.length === 0) {
+                showEmptyState();
+                return;
+            }
+
+            listContainer.innerHTML = comments.map(c => `
+                <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow animate-fade-in mb-3">
+                    <div class="flex justify-between items-start mb-2">
+                        <div>
+                            <h4 class="font-bold text-soft-black text-sm">${escapeHtml(c.name)}</h4>
+                            <span class="text-xs font-bold text-vibrant-purple bg-vibrant-purple/10 px-2 py-0.5 rounded-md">
+                                Angkatan ${escapeHtml(c.batch)}
+                            </span>
+                        </div>
+                        <span class="text-[10px] text-gray-400">
+                            ${new Date(Number(c.time)).toLocaleDateString('id-ID', {day: 'numeric', month: 'short', hour: '2-digit', minute:'2-digit'})}
+                        </span>
+                    </div>
+                    <p class="text-gray-600 text-sm leading-relaxed">"${escapeHtml(c.message)}"</p>
+                </div>
+            `).join('');
+        }
+
+        function showEmptyState() {
+            const listContainer = document.getElementById('commentsList');
+            if (listContainer) {
+                listContainer.innerHTML = `
+                    <div class="flex flex-col items-center justify-center h-full text-gray-500 opacity-60">
+                        <i class="far fa-comment-dots text-4xl mb-2"></i>
+                        <p>Belum ada ucapan. Jadilah yang pertama!</p>
+                    </div>
+                `;
+            }
+        }
+
+        function updateStatus(online) {
+            const el = document.getElementById('connectionStatus');
+            if(el) {
+                el.classList.remove('hidden');
+                el.innerHTML = online 
+                    ? '<i class="fas fa-wifi text-green-500"></i> Mode Online (App Script Connected)' 
+                    : '<i class="fas fa-save text-orange-500"></i> Mode Offline (Penyimpanan Lokal)';
+            }
+        }
+
+        function escapeHtml(text) {
+            if (!text) return "";
+            return String(text).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
+        }
+
+        // --- 2. Load Komentar (AppScript -> Local) ---
+        async function loadComments() {
+            const listContainer = document.getElementById('commentsList');
+            
+            // Tampilkan LocalStorage dulu (Instant Load)
+            const localData = getLocalData();
+            if (localData.length > 0) renderComments(localData);
+
+            if (!SCRIPT_URL) {
+                if (localData.length === 0) showEmptyState();
+                updateStatus(false);
+                return;
+            }
+
+            try {
+                // Fetch dari Google Sheet dengan Timestamp untuk Anti-Cache
+                const response = await fetch(SCRIPT_URL + '?action=read&t=' + Date.now());
+                const data = await response.json();
+                
+                if (data.result === 'success' && Array.isArray(data.data)) {
+                    renderComments(data.data);
+                    updateStatus(true);
+                }
+            } catch (error) {
+                console.error("Gagal ambil data AppScript:", error);
+                updateStatus(false); // Fallback ke mode offline
+            }
+        }
+
+        // --- 3. Kirim Komentar (Form Submit) ---
+        const commentForm = document.getElementById('commentForm');
+        
+        if (commentForm) {
+            commentForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                
+                const btn = commentForm.querySelector('button');
+                const originalBtnText = btn.innerHTML;
+                
+                // Ambil data form
+                const formData = new FormData(commentForm);
+                const dataObj = Object.fromEntries(formData.entries());
+                dataObj.time = Date.now(); // Tambah timestamp
+                
+                // 1. Simpan Lokal Dulu (Agar user merasa cepat/instant)
+                saveLocal(dataObj);
+                renderComments(getLocalData()); 
+                commentForm.reset();
+                showToast("Ucapan terkirim! (Disimpan)");
+
+                // 2. Kirim ke Google Sheet
+                if (SCRIPT_URL) {
+                    btn.disabled = true;
+                    btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sinkronisasi...';
+                    
+                    try {
+                        // Gunakan URLSearchParams untuk kompatibilitas doPost
+                        await fetch(SCRIPT_URL, {
+                            method: 'POST',
+                            mode: 'no-cors', // Penting untuk menghindari blokir CORS
+                            headers: {
+                                'Content-Type': 'application/x-www-form-urlencoded'
+                            },
+                            body: new URLSearchParams(formData) 
+                        });
+                        console.log("Sukses terkirim ke server");
+                        // Tunggu sebentar lalu refresh
+                        setTimeout(() => loadComments(), 2000); 
+                    } catch (error) {
+                        console.error("Gagal kirim ke server, data aman di lokal:", error);
+                    } finally {
+                        btn.disabled = false;
+                        btn.innerHTML = originalBtnText;
+                    }
+                }
+            });
+        }
+
+        // --- 4. Eksekusi ---
+        
+        // Fungsi Auto-Refresh setiap 10 detik agar terlihat "Live"
+        setInterval(() => {
+            if(SCRIPT_URL) loadComments();
+        }, 10000);
+
+        // Jalankan saat load
+        loadComments();
+
+        // Counter sederhana (Local Storage Based)
+        function initCounter() {
+            let views = parseInt(localStorage.getItem('page_views') || '150');
+            views++;
+            localStorage.setItem('page_views', views);
+            const counterEl = document.getElementById('viewCounter');
+            if (counterEl) counterEl.innerText = `Total Dilihat: ${views} kali`;
+        }
+        initCounter();
+
+    </script>
+
+    <!-- Legacy Scripts (Copy Clipboard & Toast) -->
+    <script>
+        function copyToClipboard(text) {
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(text).then(() => {
+                    showToast('Nomor rekening disalin!');
+                }).catch(err => {
+                    fallbackCopyTextToClipboard(text);
+                });
+            } else {
+                fallbackCopyTextToClipboard(text);
+            }
+        }
+
+        function fallbackCopyTextToClipboard(text) {
+            var textArea = document.createElement("textarea");
+            textArea.value = text;
+            textArea.style.position = "fixed";
+            textArea.style.left = "-9999px";
+            textArea.style.top = "0";
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+
+            try {
+                var successful = document.execCommand('copy');
+                if(successful) showToast('Nomor rekening disalin!');
+            } catch (err) {
+                console.error('Fallback: Oops, unable to copy', err);
+            }
+            document.body.removeChild(textArea);
+        }
+
+        function showToast(message) {
+            const existingToast = document.querySelector('.custom-toast');
+            if (existingToast) document.body.removeChild(existingToast);
+
+            const toast = document.createElement('div');
+            toast.className = 'custom-toast fixed bottom-10 left-1/2 transform -translate-x-1/2 bg-white text-soft-black px-8 py-4 rounded-full text-base font-bold z-50 transition-all duration-300 opacity-0 shadow-2xl translate-y-10 border border-gray-100';
+            toast.innerHTML = '<i class="fas fa-check-circle text-green-500 mr-2"></i>' + message;
+            document.body.appendChild(toast);
+
+            requestAnimationFrame(() => {
+                toast.classList.remove('opacity-0', 'translate-y-10');
+            });
+
+            setTimeout(() => {
+                toast.classList.add('opacity-0', 'translate-y-10');
+                setTimeout(() => {
+                    if (toast.parentNode) document.body.removeChild(toast);
+                }, 300);
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
